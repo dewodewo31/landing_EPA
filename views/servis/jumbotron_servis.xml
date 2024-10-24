@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="jumbotron_servis" name="Jumbotron Section">
+        <!-- Media Queries -->
+        <style>
+            .jumbotron-text {
+                    color: #fff;
+                    font-weight: bold;
+                    font-size: 6vw; /* Ukuran responsif berbasis lebar viewport */
+                    text-align: center; /* Rata tengah */
+                    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+                }
+            @media (max-width: 768px) {
+            .jumbotron-text, .body-text {
+                font-size: 8vw; /* Ukuran lebih kecil untuk tablet */
+            }
+            .news-text {
+                font-size: 5vw; /* Ukuran lebih kecil untuk tablet */
+                right: -100px; /* Sesuaikan posisi jika perlu */
+            }
+            }
+
+            @media (max-width: 576px) {
+                .jumbotron-text, .body-text {
+                    font-size: 10vw; /* Ukuran lebih kecil untuk smartphone */
+                }
+                .news-text {
+                    font-size: 6vw; /* Ukuran lebih kecil untuk smartphone */
+                    right: -50px; /* Sesuaikan posisi jika perlu */
+                }
+            }
+        </style>
+
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent; position: absolute; width: 100%; z-index: 10;">
+            <div class="container">
+                <a class="navbar-brand" href="/landing_page">
+                    <img src="/landing_EPA/static/src/img/logo.png" alt="Logo Brand" style="height: 100px; border-radius: 15px;"/>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold text-dark" href="/landing_page#about-us" style="font-size: 1.6rem;">ABOUT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold text-dark" href="#service" style="font-size: 1.6rem;">SERVICE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold text-dark" href="#project" style="font-size: 1.6rem;">PROJECT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold text-dark" href="#news" style="font-size: 1.6rem;">NEWS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold text-dark" href="#contact-us" style="font-size: 1.6rem;">CONTACT US</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Jumbotron Section -->
+        <div class="jumbotron jumbotron-fluid" style="position: relative; padding: 100px 20px; text-align: center; min-height: 600px; margin-bottom: 0px;">
+            <div style="background-image: url('/landing_EPA/static/src/img/services/jumbotron_service.jpg'); background-size: cover; position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.8; z-index: 1;">
+            </div>
+            <div class="container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">
+                <h1 class="display-1 jumbotron-text">
+                    SERVICE 
+                </h1>
+            </div>
+        </div>
+
+        <nav aria-label="breadcrumb" class="container my-3">
+            <ol style="list-style: none; display: flex; padding: 0; margin: 0; justify-content: left;">
+                <li>
+                    <a href="/landing_page" style="color: #000;">Home</a>
+                </li>
+                <li style="margin: 0 5px;">&gt;</li>
+                <li class="active" aria-current="page" style="color: #ed781b;">Services Page</li>
+            </ol>
+        </nav>
+    </template>
+</odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="servis_page_template" name="Services Page">
+        <t t-call="website.layout">
+
+            <style>
+    /* Menghilangkan semua pemisah secara default */
+    .breadcrumb-item + .breadcrumb-item:before {
+        content: '';
+    }
+    body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+            </style>
+            <div style="background-color: #ece7e1; display: flex; flex-direction: column; min-height: 100vh; font-family: 'Open Sans', sans-serif;">
+                <!-- Memanggil stylesheet terlebih dahulu -->
+                <t t-call="landing_EPA.assets_css"/>
+
+                <t t-call="landing_EPA.jumbotron_servis"/>
+
+                <t t-call="landing_EPA.service_body"/>
+
+                <t t-call="landing_EPA.invite_us"/>
+
+                <t t-call="landing_EPA.footer"/>
+
+                <!-- Memanggil javascript -->
+                <t t-call="landing_EPA.assets_js"/>
+            </div>
+        </t>
+    </template>
+
+    <record id="action_servis_page" model="ir.actions.act_url">
+        <field name="name">Services Page</field>
+        <field name="url">/servis_page</field>        <!-- Ganti dengan URL yang sesuai -->
+        <field name="target">self</field>
+    </record>
+</odoo>

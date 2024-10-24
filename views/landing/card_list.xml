@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="card" name="Card List Section">
+        <!-- <div class="container-fluid" style="margin-top: 0; margin-bottom: 0;">
+            <div class="row g-0">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card text-center shadow-sm flex-fill" style="position: relative; overflow: hidden; border: 1px solid #000; border-radius: 10px;">
+                        <img src="/landing_EPA/static/src/img/eng.jpg" class="card-img-top" alt="Engineering" style="height: 300px; width: 100%; object-fit: cover;"/>
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <h5 class="card-title font-weight-bold" style="font-size: 2rem; color: #FFFFFF;">ENGINEERING</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card text-center shadow-sm flex-fill" style="position: relative; overflow: hidden; border: 1px solid #000; border-radius: 10px;">
+                        <img src="/landing_EPA/static/src/img/proc.jpg" class="card-img-top" alt="Procurement" style="height: 300px; width: 100%; object-fit: cover;" />
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <h5 class="card-title font-weight-bold" style="font-size: 2rem; color: #FFFFFF;">PROCUREMENT</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card text-center shadow-sm flex-fill" style="position: relative; overflow: hidden; border: 1px solid #000; border-radius: 10px;">
+                        <img src="/landing_EPA/static/src/img/const.jpg" class="card-img-top" alt="Construction" style="height: 300px; width: 100%; object-fit: cover;" />
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <h5 class="card-title font-weight-bold" style="font-size: 2rem; color: #FFFFFF;">CONSTRUCTION</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </template>
+</odoo>

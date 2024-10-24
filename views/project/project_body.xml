@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="project_body" name="project body section">
+        <style>
+            .custom-btn:hover {
+                background-color: #ed781b;
+                color: #ece7e1;
+            }
+
+            .custom-pagination {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+            }
+
+            .custom-page-link {
+                margin: 0 5px;
+                padding: 8px 12px;
+                border: 1px solid #ed781b; /* Warna border sesuai keinginan */
+                border-radius: 5px; /* Sesuaikan dengan keinginan */
+                background-color: #ece7e1; /* Warna latar belakang */
+                color: #000; /* Warna teks */
+                text-decoration: none;
+            }
+
+            .custom-page-link:hover {
+                background-color: #ece7e1; /* Warna saat hover */
+                color: #ed781b; /* Warna teks saat hover */
+            }
+
+            /* Tambahkan aturan ini untuk halaman aktif */
+            .custom-page-link.active {
+                background-color: #ed781b; /* Warna latar belakang untuk halaman aktif */
+                color: black; /* Warna teks untuk halaman aktif */
+            }
+
+            .custom-page-link[disabled] {
+                opacity: 0.5; /* Untuk menonaktifkan link */
+                pointer-events: none; /* Nonaktifkan interaksi */
+            }
+
+
+            
+        </style>
+        <div class="container-fluid" style="background-image: url('/landing_EPA/static/src/img/project/bg_project.png'); background-size: 70%; background-position: center;">
+            <div class="container">
+                <div class="row">
+                    <!-- Kolom Kiri: Judul dengan margin kecil -->
+                    <div class="col-md-4 d-flex align-items-center">
+                        <div class="title-container">
+                            <h1 class="text-left font-bold" style="color: #000; font-size: 3rem;font-weight: 700;">
+                        OUR <span style="color: #ed781b; font-size: 3rem; font-weight: 700;">PROJECT</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <!-- Kolom Kanan: Deskripsi dengan lebar lebih besar -->
+                    <div class="col-md-8">
+                        <p class="text-justify" style="font-size: 1.2rem; color: #333;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel 
+                    metus interdum, convallis sapien et, viverra lorem. Sed efficitur massa 
+                    non metus placerat, sed facilisis ligula luctus. Cras vehicula ligula non 
+                    mi eleifend, a varius massa tincidunt. Etiam sit amet nunc at nisi vehicula 
+                    convallis. Donec pharetra auctor libero, ac posuere arcu sodales eget.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- grid kolase -->
+            <section class="mt-5 mb-0">
+                <div class="container-fluid" style="background-color: #ece7e1;">
+                    <div class="container">
+                        <div class="row g-1">
+                            <!-- Gunakan g-1 untuk jarak antar grid -->
+                            <!-- Grid Kiri: Kolom lebih sempit -->
+                            <div class="col-md-4 p-1">
+                                <div class="img-container" style="height: 410px;">
+                                    <img src="/landing_EPA/static/src/img/services/const1.png" alt="Image 1" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;"/>
+                                </div>
+                            </div>
+
+                            <!-- Grid Kanan: Kolom lebih lebar -->
+                            <div class="col-md-8 ">
+                                <div class="row g-1">
+                                    <!-- Kolom Kiri -->
+                                    <div class="col-md-6 p-1">
+                                        <div class="img-container" style="height: 200px;">
+                                            <img src="/landing_EPA/static/src/img/services/const1.png" alt="Image 2" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;"/>
+                                        </div>
+                                    </div>
+
+                                    <!-- Kolom Kanan -->
+                                    <div class="col-md-6 p-1">
+                                        <div class="img-container" style="height: 200px;">
+                                            <img src="/landing_EPA/static/src/img/services/const1.png" alt="Image 2" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;"/>
+                                        </div>
+                                    </div>
+                                    <div class="img-container mt-1" style="height: 200px;">
+                                        <img src="/landing_EPA/static/src/img/services/const1.png" alt="Image 3" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-0 mb-5">
+                <div class="container-fluid" style="background-color: #ece7e1;">
+                    <div class="container">
+                        <div class="row g-1">
+                            <!-- Grid Kanan: Kolom lebih lebar -->
+                            <div class="col-md-8 ">
+                                <div class="row g-1">
+                                    <!-- Kolom Kiri -->
+                                    <div class="col-md-6 p-1">
+                                        <div class="img-container" style="height: 200px;">
+                                            <img src="/landing_EPA/static/src/img/services/const1.png" alt="Image 2" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;"/>
+                                        </div>
+                                    </div>
+
+                                    <!-- Kolom Kanan -->
+                                    <div class="col-md-6 p-1">
+                                        <div class="img-container" style="height: 200px;">
+                                            <img src="/landing_EPA/static/src/img/services/const1.png" alt="Image 2" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;"/>
+                                        </div>
+                                    </div>
+                                    <div class="img-container mt-1" style="height: 200px;">
+                                        <img src="/landing_EPA/static/src/img/services/const1.png" alt="Image 3" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Grid Kiri: Kolom lebih sempit -->
+                            <div class="col-md-4 p-1">
+                                <div class="img-container" style="height: 410px;">
+                                    <img src="/landing_EPA/static/src/img/services/const1.png" alt="Image 1" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </template>
+</odoo>

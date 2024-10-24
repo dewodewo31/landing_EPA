@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="form_body" name="form body section">
+        <style>
+@media (max-width: 768px) {
+    hr {
+        border: 1px solid #ed781b; /* Mengubah warna border pada layar kecil */
+        width: 90%; /* Lebar lebih kecil untuk perangkat kecil */
+        margin: 5px auto; /* Margin lebih kecil di atas dan bawah */
+    }
+}
+        </style>
+
+        <form method="post" action="/form/submit" enctype="multipart/form-data">
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+            <!-- Button Section -->
+            <div class="container text-center my-4 mb-3">
+                <hr style="border: 1px solid #000; width: 100%; margin: 0 auto;"/>
+                <span style="background: #ece7e1; padding: 0 10px; position: relative; top: -0.7em; z-index: 1; font-size: 20px; font-weight: bold;">
+                WHAT YOU NEED US TO?
+                </span>
+            </div>
+            <div class="text-justify mb-3">
+                <p style="width: 80%; margin: auto; font-size: 16px;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+            <div class="d-flex justify-content-center my-4 mb-3 flex-wrap">
+                <button type="button" id="serviceRequestBtn" class="btn" style="background-color: #ed781b; color: white; margin: 10px; padding: 10px 0; width: 230px; white-space: normal; text-align: center; font-weight: bold; font-size: 18px; border-radius: 0;" onclick="toggleButton(this, 'Request Service For A Project')">
+        REQUEST OUR SERVICE <br/>
+        FOR A PROJECT
+                </button>
+                <button type="button" id="supplyRequestBtn" class="btn" style="background-color: #ed781b; color: white; margin: 10px; padding: 10px 0; width: 230px; white-space: normal; text-align: center; font-weight: bold; font-size: 18px; border-radius: 0;" onclick="toggleButton(this, 'Request Supply Material')">
+        REQUEST TO SUPPLY <br/>
+        FOR A MATERIAL
+                </button>
+            </div>
+            <input type="hidden" name="lead_title" id="lead_title" value=""/>
+
+            <!-- Name Section -->
+            <div class="container my-4 mb-3">
+                <hr style="border: 1px solid #000; width: 100%; margin: 0 auto;"/>
+                <span style="background: #ece7e1; padding: 0 10px; position: relative; top: -0.7em; z-index: 1; font-size: 20px; font-weight: bold; left: -1em">
+                NAME
+                </span>
+            </div>
+            <div class="text-justify mb-3">
+                <p style="width: 80%; margin: auto; font-size: 16px;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+
+            <div class="row mt-4 justify-content-center mb-3">
+                <div class="col-md-4 col-12 mb-3">
+                    <label for="name" style="font-weight: bold;">NAME</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" style="background-color: #ece7e1; border-color: #ed781b; border-width: 2px; border-radius: 0;" required="required" />
+                </div>
+
+                <div class="col-md-4 col-12 mb-3">
+                    <label for="company_name" style="font-weight: bold;">NAME OF YOUR COMPANY</label>
+                    <input type="text" id="company_name" name="company_name" class="form-control" placeholder="Enter your company name" style="background-color: #ece7e1; border-color: #ed781b; border-width: 2px; border-radius: 0;" />
+                </div>
+            </div>
+
+
+            <!-- Information Details Section -->
+            <div class="container my-4 mb-3 text-end">
+                <hr style="border: 1px solid #000; width: 100%; margin: 0 auto;"/>
+                <span style="background: #ece7e1; padding: 0 10px; position: relative; top: -0.7em; z-index: 1; font-size: 20px; font-weight: bold; right: -1em">
+                INFORMATION DETAILS
+                </span>
+            </div>
+
+            <div class="text-justify mb-3">
+                <p style="width: 80%; margin: auto; font-size: 16px;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+
+
+            <div class="row mt-4 justify-content-center mb-3">
+                <div class="col-md-4 col-12 mb-3">
+                    <label for="email" style="font-weight: bold;">EMAIL</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" style="background-color: #ece7e1; border-color: #ed781b; border-width: 2px; border-radius: 0;" required="required" />
+                </div>
+
+                <div class="col-md-4 col-12 mb-3">
+                    <label for="phone" style="font-weight: bold;">PHONE</label>
+                    <input type="text" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" style="background-color: #ece7e1; border-color: #ed781b; border-width: 2px; border-radius: 0;" required="required" />
+                </div>
+            </div>
+
+
+            <!-- Details Section -->
+            <div class="container my-4 mb-3">
+                <hr style="border: 1px solid #000; width: 100%; margin: 0 auto;"/>
+                <span style="background: #ece7e1; padding: 0 10px; position: relative; top: -0.7em; z-index: 1; font-size: 20px; font-weight: bold; left: -1em">
+                DETAILS
+                </span>
+            </div>
+            <div class="text-justify mb-3">
+                <p style="width: 80%; margin: auto; font-size: 16px;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+            <div class="row mt-4 justify-content-center mb-2">
+                <div class="col-12 mb-3">
+                    <textarea id="description" name="description" class="form-control" placeholder="Enter your description" style="height: 250px; border-color: #ed781b; border-width: 2px; border-radius: 0; background-color: #ece7e1; width: 80%; margin: auto;" required="required"></textarea>
+                </div>
+            </div>
+
+
+
+
+            <div class="d-flex justify-content-center my-4 mb-3 flex-wrap">
+                <label for="attachment" class="btn" style="background-color: #ed781b; color: white; margin: 5px 10px; padding: 10px 0; width: 160px; white-space: normal; text-align: center; font-weight: bold; font-size: 18px; border-radius: 0; cursor: pointer;">
+            ATTACHMENT
+                </label>
+                <input id="attachment" type="file" name="attachment" accept=".pdf, image/*" style="display: none;" />
+
+                <button type="submit" name="action" value="send_message" class="btn" style="background-color: #ed781b; color: white; margin: 5px 10px; padding: 10px 0; width: 160px; white-space: normal; text-align: center; font-weight: bold; font-size: 18px; border-radius: 0;">
+        SEND MESSAGE
+                </button>
+            </div>
+
+        </form>
+        <script>
+    function toggleButton(button, value) {
+        button.classList.toggle('active');
+        let leadTitleInput = document.getElementById('lead_title');
+
+        // Check if the button is active
+        if (button.classList.contains('active')) {
+            leadTitleInput.value = leadTitleInput.value ? leadTitleInput.value + ',' + value : value; // Add value to input
+            button.style.backgroundColor = '#d1a56b'; // Change color when active
+        } else {
+            leadTitleInput.value = leadTitleInput.value.replace(new RegExp('(,)?' + value + '(,)?', 'g'), ',').replace(/(^,)|(,$)/g, ''); // Remove value from input
+            button.style.backgroundColor = '#ed781b'; // Reset color when inactive
+        }
+    }
+        </script>
+    </template>
+</odoo>

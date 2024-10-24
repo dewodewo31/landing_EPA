@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="testimoni" name="Testimoni Section">
+        <style>
+          .testimonial-card {
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+    position: relative;
+    height: 100%; /* Memastikan card memiliki tinggi penuh */
+}
+
+.bg-color-1 {
+    background-color: #fff; /* Warna pertama */
+    color: #000; /* Warna teks sesuai dengan background */
+}
+
+.bg-color-2 {
+    background-color: #000; /* Warna kedua */
+    color: #fff; /* Warna teks sesuai dengan background */
+}
+
+.testimonial-card h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.testimonial-card p {
+    font-size: 1.2rem;
+    font-family: 'Open Sans', sans-serif;
+    text-align: justify;
+}
+
+.testimonial-card .icon-container {
+    display: flex;
+    justify-content: space-between; /* Membuat tulisan dan icon berada di ujung berlawanan */
+    align-items: center;
+    width: 100%; /* Memastikan mereka mengambil lebar penuh */
+}
+
+.testimonial-card .icon-container a {
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column; /* Mengubah ke kolom untuk tampilan responsif */
+    align-items: flex-start; /* Menyelaraskan ke kiri */
+    margin-bottom: 20px; /* Spasi antara judul dan deskripsi */
+    
+}
+
+.title-container h2 {
+    margin: 0; /* Menghilangkan margin untuk keseragaman */
+    font-size: 2rem; /* Ukuran font responsif */
+}
+
+.description {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: justify;
+    max-width: 600px;
+}
+
+.icon-black {
+    color: black; /* Warna hitam */
+}
+
+.icon-white {
+    color: white; /* Warna putih */
+}
+
+.quote-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 3rem; /* Ukuran tanda petik */
+    font-weight: bold; /* Bold */
+    color: #ed781b; /* Warna tanda petik */
+    z-index: 1; /* Pastikan tanda petik berada di atas konten lainnya */
+}
+
+.testimonial-content {
+    margin-left: 40px; /* Space antara tanda petik dan isi testimoni */
+}
+
+.testimonial-footer {
+    display: flex;
+    flex-direction: column; /* Mengubah ke kolom untuk menyelaraskan dengan tanda petik */
+    justify-content: flex-start; /* Menyelaraskan ke atas */
+    margin-top: 20px; /* Tambahkan spasi vertikal antara konten dan footer */
+}
+
+.testimonial-footer h6 {
+    color: #ed781b;
+    margin: 0; /* Hilangkan margin untuk keseragaman */
+}
+
+.testimonial-footer p {
+    color: #ed781b;
+    font-size: 0.75rem; /* Ukuran font yang lebih kecil untuk perusahaan */
+    margin: 0; /* Hilangkan margin */
+}
+
+/* Pengaturan ukuran carousel agar lebih kecil */
+#testimonialCarousel {
+    max-width: 100%; 
+        height: auto;
+    margin: 0 auto; /* Agar carousel berada di tengah */
+}
+
+.carousel-inner {
+    padding: 20px; /* Memberi padding untuk memperkecil area konten */
+}
+
+/* Menambah margin antara tombol kontrol dan carousel */
+.custom-control-prev, .custom-control-next {
+    margin-top: 50px;
+}
+
+/* Mengecilkan ukuran tombol kontrol */
+ .carousel-control-prev, .carousel-control-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background-color: gray;
+        border-radius: 50%;
+    }
+    .carousel-control-prev {
+        left: -50px; /* Posisi di luar kotak sebelah kiri */
+    }
+
+    .carousel-control-next {
+        right: -50px; /* Posisi di luar kotak sebelah kanan */
+    }
+
+/* Menambahkan margin pada konten carousel agar tidak terlalu dekat dengan tombol kontrol */
+    .testimonial-card {
+        margin-bottom: 20px;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+    }
+    .carousel-item {
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .title-container h2 {
+        font-size: 1.5rem; /* Mengurangi ukuran font pada layar kecil */
+    }
+    .description {
+        font-size: 1rem; /* Mengurangi ukuran font pada layar kecil */
+    }
+    .testimonial-card p {
+        font-size: 1rem; /* Mengurangi ukuran font testimoni */
+    }
+    .grid-layout {
+        display: none !important;
+    }
+    .carousel-layout {
+        display: block !important;
+    }
+}
+ @media (min-width: 768px) {
+               
+                .carousel-layout {
+                    display: none !important;
+                }
+            }
+
+        </style>
+
+        <div id="testimonials" class="container-fluid mt-1 mb-1" style="border: 1px solid #ece7e1; padding: 20px; border-radius: 10px; background-image: url('/landing_EPA/static/src/img/background/testi.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+            <div class="row">
+                <!-- Bagian atas: Judul dan Deskripsi dalam satu baris -->
+                <div class="col-12">
+                    <div class="row align-items-center" style="padding-left: 50px; padding-right: 50px;">                        <!-- Tambah padding agar lebih maju -->
+                        <div class="col-md-6">
+                            <div class="title-container">
+                                <h1 class="text-left" style="font-size: 3rem; font-weight: bold; color: #ed781b;">
+                    WHAT THEY SAY
+                                </h1>
+                                <h1 class="text-left" style="font-size: 3rem; font-weight: bold; color: #000;">
+                    ABOUT US
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="description">
+                                <p class="text-right" style="padding-right: 20px;">                                    <!-- Tambah padding-right -->
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lectus vel libero laoreet ultricies.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Bagian bawah: 3 Testimonial Cards -->
+            <div class="row mt-4 grid-layout">
+                <t t-foreach="range(0, 3)" t-as="testimonial" t-key="testimonial">
+                    <div class="col-md-4 col-sm-6 mb-0 d-flex">
+                        <!-- Penerapan class dinamis berdasarkan indeks -->
+                        <div t-attf-class="testimonial-card h-100 #{'bg-color-1' if testimonial % 2 == 0 else 'bg-color-2'}" style="border-radius: 0; display: flex; flex-direction: column; padding: 20px; height: 100%;">
+                            <span class="quote-icon">“</span>
+                            <br/>
+                            <p style="margin-top: 20px;">
+                                Testimoni <t t-esc="testimonial"/>
+                                     ini menunjukkan betapa luar biasanya layanan kami.
+                            </p>
+                            <div class="testimonial-footer">
+                                <h6 style="margin-bottom: 2px;">Nama Pengguna <t t-esc="testimonial"/>
+                                </h6>                                <!-- Mengurangi margin-bottom -->
+                                <div class="icon-container" style="margin-top: 0;">                                    <!-- Pastikan tidak ada margin di sini -->
+                                    <p style="margin: 0;">Perusahaan <t t-esc="testimonial"/>
+                                    </p>
+                                    <a href="/landing_page">
+                                        <img t-att-src="'/landing_EPA/static/src/img/icon/big.png'" style="width: 3rem; height: auto; margin-left: 5px; margin-bottom: 0;" alt="Custom Arrow Icon"/>
+                                        <!-- Mengatur margin-bottom menjadi 0 -->
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </div>
+
+        <div id="testimonialCarousel" class="carousel slide carousel-layout" data-bs-ride="carousel" style="max-width: 400px; margin: 0 auto;">
+            <div class="carousel-inner">
+                <t t-foreach="range(0, 3)" t-as="testimonial" t-key="testimonial">
+                    <div t-attf-class="carousel-item #{'active' if testimonial == 0 else ''}">
+                        <div class="d-flex justify-content-center">
+                            <div t-attf-class="testimonial-card #{'bg-color-1' if testimonial % 2 == 0 else 'bg-color-2'}" style="border-radius: 0;">
+                                <span class="quote-icon">“</span>
+                                <br/>
+                                <p style="margin-top: 20px;">
+                            Testimoni <t t-esc="testimonial"/>
+                                        ini menunjukkan betapa luar biasanya layanan kami.
+                                </p>
+                                <div class="testimonial-footer">
+                                    <h6>Nama Pengguna <t t-esc="testimonial"/>
+                                    </h6>
+                                    <div class="icon-container">
+                                        <p style="margin: 0;">Perusahaan <t t-esc="testimonial"/>
+                                        </p>
+                                        <a href="/testi" t-attf-class="#{'icon-black' if testimonial % 2 == 0 else 'icon-white'}">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev" style="left: -50px;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next" style="right: -50px;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <script>
+    // Tambahkan fitur swipe untuk carousel di mode mobile
+    document.addEventListener('DOMContentLoaded', function () {
+        var carousel = document.getElementById('testimonialCarousel');
+        var touchStartX = 0;
+        var touchEndX = 0;
+
+        // Tangkap event saat user mulai menyentuh layar
+        carousel.addEventListener('touchstart', function (e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        // Tangkap event saat user berhenti menyentuh layar
+        carousel.addEventListener('touchend', function (e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleGesture();
+        });
+
+        // Fungsi untuk menangani gerakan swipe
+        function handleGesture() {
+            if (touchEndX &lt; touchStartX) {
+                
+                carousel.querySelector('.carousel-control-next').click();
+            }
+            if (touchEndX &gt; touchStartX) {
+            
+                carousel.querySelector('.carousel-control-prev').click();
+            }
+        }
+    });
+        </script>
+    </template>
+</odoo>

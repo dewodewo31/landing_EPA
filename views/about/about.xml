@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="about_page_template" name="About Page">
+        <t t-call="website.layout">
+            <!-- Menambahkan link ke font Open Sans di bagian atas -->
+            <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300,400,600,700,800&amp;display=swap" rel="stylesheet"/>
+
+            <style>
+                /* Menghilangkan semua pemisah secara default */
+                .breadcrumb-item + .breadcrumb-item:before {
+                    content: '';
+                }
+                body {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+            </style>
+            <div style="background-color: #ece7e1; display: flex; flex-direction: column; min-height: 100vh; font-family: 'Open Sans', sans-serif;">
+                <!-- Memanggil stylesheet terlebih dahulu -->
+                <t t-call="landing_EPA.assets_css"/>
+
+                <!-- Memanggil jumbotron -->
+                <t t-call="landing_EPA.jumbotron_about"/>
+
+                <t t-call="landing_EPA.about_body"/>
+                <!-- Memanggil javascript -->
+                <t t-call="landing_EPA.assets_js"/>
+            </div>
+        </t>
+    </template>
+
+    <record id="action_about_page" model="ir.actions.act_url">
+        <field name="name">About Page</field>
+        <field name="url">/about_page</field>        <!-- Ganti dengan URL yang sesuai -->
+        <field name="target">self</field>
+    </record>
+</odoo>

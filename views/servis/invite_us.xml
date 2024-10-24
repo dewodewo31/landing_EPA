@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="invite_us" name="Invite Us Section">
+        <div id="make-vision" class="container-fluid mt-1 mb-1 text-center custom-bg">
+            <style>
+                .custom-bg {
+                    background-image: url('/landing_EPA/static/src/img/services/invite_us.png'); /* Ganti dengan path ke gambar kamu */
+                    background-size: cover; /* Agar gambar menutupi seluruh area */
+                    background-position: center; /* Posisi gambar berada di tengah */
+                    background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+                }
+            </style>
+            <h1 style="font-size: 3rem; font-weight: bold; margin-top: 100px; color: #fff;">
+                MAKE YOUR <span style="color: #ed781b;">VISION</span> COME TRUE, NOW!
+            </h1>
+
+            <a href="#" class="btn" style="background-color: #ed781b; color: white; font-size: 1.5rem; padding: 10px 20px; margin-top: 20px; margin-bottom: 100px; border-radius: 0;" data-toggle="modal" data-target="#contactModal">
+                INVITE US
+            </a>
+
+            <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" style="width: 90%; max-width: 800px; border-radius: 0;">
+                    <div class="modal-content" style="border-radius: 10px; background-color: #ece7e1;">
+                        <div class="modal-body p-3 d-flex justify-content-center align-items-center" style="min-height: 250px;">                            <!-- Mengurangi padding dan height -->
+                            <div class="d-flex flex-column align-items-center" style="gap: 15px;">                                <!-- Mengurangi jarak antar elemen -->
+                                <h1 style="font-size: 2rem; font-weight: bold; margin-top: 0px; margin-bottom: 0;">                                    <!-- Mengurangi ukuran font -->
+                        YOUR VISION IS OUR MISSION,                                    <span style="color: #ed781b;">INVITE US!</span>
+                                </h1>
+                                <div class="d-flex flex-column flex-md-row align-items-center justify-content-center">
+                                    <!-- Button Icon WhatsApp -->
+                                    <div class="text-center d-flex flex-column align-items-center mb-3 mb-md-0">
+                                        <a href="https://wa.me/1234567890" target="_blank">
+                                            <img src="/landing_EPA/static/src/img/icon/whatsapp.png" alt="WhatsApp Icon" style="width: 60px; height: 60px; margin-top: 30px;" />
+                                            <!-- Ukuran gambar lebih kecil -->
+                                        </a>
+                                        <p style="font-family: 'Open Sans', sans-serif; font-weight: bold; margin-top: 5px;">WHATSAPP</p>
+                                    </div>
+                                    <span class="mx-2">or</span>                                    <!-- Mengurangi margin horizontal -->
+                                    <!-- Button Icon Email -->
+                                    <div class="text-center d-flex flex-column align-items-center mb-3 mb-md-0">
+                                        <a href="mailto:example@example.com">
+                                            <img src="/landing_EPA/static/src/img/icon/email.png" alt="Email Icon" style="width: 60px; height: 60px; margin-top: 30px;" />
+                                            <!-- Ukuran gambar lebih kecil -->
+                                        </a>
+                                        <p style="font-family: 'Open Sans', sans-serif; font-weight: bold; margin-top: 5px;">EMAIL</p>
+                                    </div>
+                                    <span class="mx-2">or</span>
+                                    <!-- Button Fill a Form -->
+                                    <div class="text-center d-flex flex-column align-items-center">
+                                        <button type="button" class="btn btn-primary" style="background-color: #ed781b; color: white; font-size: 1.2rem; font-family: 'Open Sans', sans-serif; font-weight: bold; padding: 10px 15px; border-radius: 0;" onclick="window.location.href='/form_page';">
+                                FILL IN A FORM
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <!-- <script>
+            $(document).ready(function() {
+                $('#contactModal').on('show.bs.modal', function (e) {
+                    $(this).addClass('fade show');
+                });
+                
+                $('#contactModal').on('hide.bs.modal', function (e) {
+                    $(this).removeClass('show').addClass('fade hide');
+                });
+                
+                $('#contactModal').on('hidden.bs.modal', function (e) {
+                    $(this).removeClass('fade hide');
+                });
+            });
+        </script> -->
+    </template>
+</odoo>

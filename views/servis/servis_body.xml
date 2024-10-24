@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="service_body" name="Services Body">
+        <!-- our expertise -->
+        <div class="container my-4">
+            <h1 class="display-4 text-start" style="font-weight: bold;">OUR <span style="color: #ed781b;">EXPERTISE</span>
+            </h1>
+            <p class="text-justify" style="font-size: 1.2rem; margin-top: 20px;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis, massa ut sagittis placerat, leo nisl dapibus justo, non dictum ex sapien in ex. Fusce nec cursus arcu, sit amet aliquet dolor. In condimentum, sapien ut tincidunt vehicula, libero ante commodo sem, nec euismod erat magna at ligula. Donec gravida neque et sem laoreet, id vehicula metus ultrices. Aenean quis nisi eu velit posuere consequat ac et nulla.
+            </p>
+            <p class="text-justify mt-1" style="font-size: 1.2rem;">
+                Proin et eros a nisl ultrices interdum at ac lectus. Sed pretium ligula a libero hendrerit malesuada. Phasellus et bibendum sapien. Quisque et neque eu nisi ullamcorper bibendum ut nec velit. Aenean scelerisque consectetur sapien, non euismod eros blandit at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus consequat urna ut est pharetra, non vulputate lorem accumsan. Nullam nec dui ac magna tempor sagittis.
+            </p>
+        </div>
+        <div class="container-fluid mb-4">
+            <div class="container d-flex justify-content-center align-items-center" style="height: auto;">
+                <img src="/landing_EPA/static/src/img/services/hr_expertise.PNG" alt="HR Expertise" style="width: 100%; height: auto;"/>
+            </div>
+        </div>
+        <!-- end -->
+
+        <!-- enginering -->
+        <div class="container-fluid" style="background-image: url('/landing_EPA/static/src/img/services/bg_eng.png'); background-size: cover; background-position: center;">
+            <div class="container mt-5 mb-3">
+                <hr style="border: 1px solid #000; width: 100%; margin: 0 auto;"/>
+                <span style="background: #ece7e1; padding: 0 10px; position: relative; top: -0.7em; z-index: 1; font-size: 20px; font-weight: bold; left: -1em">
+                    01 ENGINEERING
+                </span>
+            </div>
+
+            <div class="container mt-0 mb-0">
+                <h1 class="display-7 text-start" style="font-weight: bold;">ENGINEERING</h1>
+                <p class="text-justify" style="font-size: 1.2rem; margin-top: 20px;">
+            Tahapan Proses Pembuatan Design Yang Lebih Detail dan Telah Final. Pada Tahap Ini, Tidak Ada Banyak Perubahan Yang Boleh Dilakukan, Kecuali Melalui Persetujuan Pemilik.
+                </p>
+            </div>
+
+            <div class="container">
+                <div class="row d-flex align-items-start">
+                    <!-- Kolom Kiri: Gambar Full Cover -->
+                    <div class="col-md-6">
+                        <div class="img-container" style="height: 100%; overflow: hidden;">
+                            <img src="/landing_EPA/static/src/img/eng.jpg" alt="HR Expertise" style="width: 100%; height: 100%; object-fit: cover;"/>
+                        </div>
+                    </div>
+
+                    <!-- Kolom Kanan: Deskripsi -->
+                    <div class="col-md-6 p-0 d-flex align-items-start">
+                        <div>
+                            <p class="text-justify mt-1" style="font-size: 1.2rem;">
+                        Proin et eros a nisl ultrices interdum at ac lectus. Sed pretium ligula a libero hendrerit malesuada. Phasellus et bibendum sapien. Quisque et neque eu nisi ullamcorper bibendum ut nec velit. Aenean scelerisque consectetur sapien, non euismod eros blandit at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus consequat urna ut est pharetra, non vulputate lorem accumsan. Nullam nec dui ac magna tempor sagittis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- end -->
+
+        <!-- procurement -->
+        <div class="container mt-5 mb-2 text-end">
+            <hr style="border: 1px solid #000; width: 100%; margin: 0 auto;"/>
+            <span style="background: #ece7e1; padding: 0 10px; position: relative; top: -0.7em; z-index: 1; font-size: 20px; font-weight: bold; right: -1em">
+                02 PROCUREMENT
+            </span>
+        </div>
+
+        <div class="container">
+            <div class="card" style="width: 100%; border: none; border-radius: 0;">
+                <!-- Bagian Gambar di Atas -->
+                <img src="/landing_EPA/static/src/img/proc.jpg" class="card-img-top" alt="Example Image" style="width: 100%; height: 300px; object-fit: cover; border-radius: 0;"/>
+
+                <!-- Bagian Text di Bawah -->
+                <div class="card-body p-2 " style="background-color: #ece7e1;border-radius: 0;">
+                    <h1 class="display-7 text-start mt-2" style="font-weight: bold;">PROCUREMENT</h1>
+                    <p class="card-text " style="font-size: 1.2rem;">
+                        Ini adalah deskripsi singkat tentang konten di dalam card. Anda bisa menambahkan teks apapun di sini untuk memberikan informasi tambahan.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- end -->
+
+        <!-- construction -->
+        <div class="container-fluid" style="background-image: url('/landing_EPA/static/src/img/services/bg_const.png'); background-size: cover; background-position: center;">
+            <div class="container mt-5 mb-3">
+                <hr style="border: 1px solid #000; width: 100%; margin: 0 auto;"/>
+
+                <span style="background: #ece7e1; padding: 0 10px; position: relative; top: -0.7em; z-index: 1; font-size: 20px; font-weight: bold; left: -1em">
+            03 CONSTRUCTION
+                </span>
+            </div>
+
+            <div class="container">
+                <h1 class="display-7 text-start mt-2" style="font-weight: bold;">CONSTRUCTION</h1>
+                <p class="text-justify" style="font-size: 1.2rem; margin-top: 20px;">
+            Tahapan Proses Pembuatan Design Yang Lebih Detail dan Telah Final. Pada Tahap Ini, Tidak Ada Banyak Perubahan Yang Boleh Dilakukan, Kecuali Melalui Persetujuan Pemilik.
+                </p>
+            </div>
+
+            <div class="container my-4">
+                <div class="row">
+                    <!-- Card Kiri -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card" style="border: none; border-radius: 0;">
+                            <!-- Gambar Card Kiri -->
+                            <img src="/landing_EPA/static/src/img/services/const1.png" class="card-img-top" alt="Left Image" style="width: 100%; height: 300px; object-fit: cover; border-radius: 0;"/>
+                        </div>
+                    </div>
+
+                    <!-- Card Kanan -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card" style="border: none; border-radius: 0;">
+                            <!-- Gambar Card Kanan -->
+                            <img src="/landing_EPA/static/src/img/services/const2.jpg" class="card-img-top" alt="Right Image" style="width: 100%; height: 300px; object-fit: cover; border-radius: 0;"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- safety protocol -->
+        <div class="container mt-5">
+            <div class="row position-relative">
+                <!-- Grid Gambar -->
+                <div class="col-md-8">
+                    <img src="/landing_EPA/static/src/img/services/safety_card.jpg" alt="Image" class="img-fluid" style="border-radius: 0;" />
+                </div>
+
+                <!-- Grid Teks -->
+                <div class="col-md-4 position-absolute" style="top: 40%; left: 75%; transform: translate(-50%, -50%); max-width: 50%; max-height: 50%;">
+                    <div class="card h-100 text-start" style="border-radius: 0; padding: 20px; background-color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <h5 class="card-title" style="color: #000; font-weight: bold; font-size: 1.5rem;">SAFETY IS NUMBER ONE</h5>
+                        <p class="card-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                        </p>
+                    </div>
+                </div>
+
+                <p style="text-align: center; margin-top: 30px; font-family: 'Open Sans', sans-serif;">
+                    <span style="color: black; font-size: 3rem; font-weight: 700;">LOOK OUT OUR </span>
+                    <span style="color: #ed781b; font-size: 3rem; font-weight: 700;">SAFETY PROTOCOL</span>
+                    <a href="/landing_page">
+                        <img t-att-src="'/landing_EPA/static/src/img/icon/big.png'" style="width: 3rem; height: auto; margin-left: 5px; margin-bottom: 30px;" alt="Custom Arrow Icon" />
+                    </a>
+                </p>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </template>
+</odoo>

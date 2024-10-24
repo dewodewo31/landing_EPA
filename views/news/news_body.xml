@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="news_body" name="news body section">
+        <style>
+        .custom-btn:hover {
+            background-color: #ed781b;
+            color: #ece7e1;
+        }
+
+        .custom-pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .custom-page-link {
+            margin: 0 5px;
+            padding: 8px 12px;
+            border: 1px solid #ed781b; /* Warna border sesuai keinginan */
+            border-radius: 5px; /* Sesuaikan dengan keinginan */
+            background-color: #ece7e1; /* Warna latar belakang */
+            color: #000; /* Warna teks */
+            text-decoration: none;
+        }
+
+        .custom-page-link:hover {
+            background-color: #ece7e1; /* Warna saat hover */
+            color: #ed781b; /* Warna teks saat hover */
+        }
+
+        /* Tambahkan aturan ini untuk halaman aktif */
+        .custom-page-link.active {
+            background-color: #ed781b; /* Warna latar belakang untuk halaman aktif */
+            color: black; /* Warna teks untuk halaman aktif */
+        }
+
+        .custom-page-link[disabled] {
+            opacity: 0.5; /* Untuk menonaktifkan link */
+            pointer-events: none; /* Nonaktifkan interaksi */
+        }
+
+
+            
+        </style>
+        <div class="container-fluid" style="background-image: url('/landing_EPA/static/src/img/news/bg_news.png'); background-size: 50%; background-position: center;">
+            <!-- Konten Mulai dari Sini -->
+
+            <div class="container">
+                <div class="row">
+                    <!-- Bagian atas: Judul dan Deskripsi dalam satu baris -->
+                    <div class="col-12">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="title-container">
+                                    <h1 class="text-left" style="color: #ed781b; font-size: 3rem; font-weight: 700;">TRENDING</h1>
+                                    <h1 class="text-left" style="color: #000; font-size: 3rem; font-weight: 700;">NEWS</h1>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="description text-left">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lectus vel libero laoreet ultricies.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex justify-content-between align-items-center my-4">
+                            <!-- Dropdown Kategori -->
+                            <div class="dropdown">
+                                <button class="btn m-2 btn-secondary dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #ece7e1; border: 1px solid #ed781b; color: #000;">
+                            Pilih Kategori
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="#">Kategori 1</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">Kategori 2</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">Kategori 3</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">Kategori 4</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Search Bar -->
+
+                            <!-- Search Bar -->
+                            <form class="d-flex flex-grow-1" action="/news_page" method="get">
+                                <input class="form-control me-2" type="search" name="q" t-att-value="search_query" placeholder="Cari..." aria-label="Search" style="background-color: #ece7e1; border: 1px solid #ed781b; color: #000;" />
+                                <button class="btn btn-outline-success custom-btn" style="border: 1px solid #ed781b; color: #ed781b;" type="submit">Cari</button>
+                            </form>
+
+                            <!-- Section for search results or 'no results' message -->
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <t t-if="news_posts">
+                                        <!-- Loop untuk menampilkan berita -->
+                                        <div class="row">
+                                            <t t-foreach="news_posts" t-as="news">
+                                                <!-- Tampilkan data berita -->
+                                            </t>
+                                        </div>
+                                    </t>
+
+                                    <t t-else="">
+                                        <!-- Pesan 'Tidak ada hasil pencarian' -->
+                                        <p>Tidak ada hasil pencarian untuk "<t t-esc="search_query"/>
+".</p>
+                                    </t>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Perulangan untuk Card Berita -->
+            <div class="container">
+                <div class="row">
+                    <t t-foreach="news_posts" t-as="news">
+                        <div class="col-md-4 mb-4 d-flex">
+                            <div class="card" style="border-radius: 0; height: 400px; width: 100%; display: flex; flex-direction: column;">
+                                <!-- Gambar Card -->
+                                <t t-if="news['cover_image_url']">
+                                    <div style="height: 200px; width: 100%; overflow: hidden;">
+                                        <img t-att-src="news['cover_image_url']" alt="Image Card" style="width: 100%; height: 100%; object-fit: cover;" />
+                                    </div>
+                                </t>
+                                <t t-else="">
+                                    <div style="height: 200px; width: 100%; overflow: hidden;">
+                                        <img src="/landing_EPA/static/src/img/default-image.png" alt="Default Image" style="width: 100%; height: 100%; object-fit: cover;" />
+                                    </div>
+                                </t>
+
+                                <!-- Body Card -->
+                                <div class="card-body" style="background-color: #ece7e1; border: 2px solid #ed781b; border-radius: 0; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                                    <!-- Teks tanggal -->
+                                    <p class="text-muted mb-1" style="font-size: 0.9rem;">
+                                        <t t-esc="news['create_date'].strftime('%d %B %Y')" />
+                                    </p>
+                                    <!-- Judul card -->
+                                    <h5 class="card-title mb-2" style="font-size: 1.1rem;">
+                                        <t t-esc="news['name']" />
+                                    </h5>
+                                    <!-- Isi card -->
+                                    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                                        <t t-set="content_length" t-value="100" />
+                                        <t t-if="len(news['content']) > content_length">
+                                            <t t-esc="news['content'][:content_length]" />
+                                            <strong>...</strong>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-esc="news['content']" />
+                                        </t>
+                                    </div>
+                                    <!-- Tautan 'Learn More' -->
+                                    <a href="" style="text-decoration: none; display: inline-flex; align-items: center; margin-top: 10px;">
+                                        <span style="color: #ed781b; font-weight: bold; font-size: 1.2rem;">LEARN MORE</span>
+                                        <img src="/landing_EPA/static/src/img/icon/big.png" alt="Learn More Icon" style="width: 20px; height: 20px; margin-left: 5px;" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <nav aria-label="Page navigation">
+                        <div class="custom-pagination">
+                            <!-- Tombol Previous -->
+                            <a t-att-href="'/news_page?page=' + str(current_page - 1)" class="page-link custom-page-link" t-att-disabled="current_page == 1" title="Previous">
+                                <img src="/landing_EPA/static/src/img/icon/big.png" alt="Previous" style="width: 20px; height: 20px; transform: scaleX(-1);" />
+                            </a>
+
+                            <!-- Daftar Halaman -->
+                            <t t-foreach="range(1, total_pages + 1)" t-as="page">
+                                <a t-att-href="'/news_page?page=' + str(page)" class="page-link custom-page-link" t-attf-style="page == current_page and 'background-color: #ed781b; color: black;' or 'color: black;'">
+                                    <t t-esc="page" />
+                                </a>
+                            </t>
+
+                            <!-- Tombol Next -->
+                            <a t-att-href="'/news_page?page=' + str(current_page + 1)" class="page-link custom-page-link" t-att-disabled="current_page == total_pages" title="Next">
+                                <img src="/landing_EPA/static/src/img/icon/big.png" alt="Next" style="width: 20px; height: 20px;" />
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Konten Berakhir di Sini -->
+        </div>
+
+
+
+
+    </template>
+</odoo>

@@ -1,0 +1,154 @@
+<odoo>
+    <template id="footer" name="Footer Section">
+
+        <style>
+    /* CSS untuk layar besar */
+    .img-footer {
+        max-width: 30%; /* Max lebar gambar di layar besar */
+        width: 15%; /* Lebar default gambar */
+        margin-left: 20px;
+        height: auto; /* Agar proporsi tetap terjaga */
+    }
+
+    /* CSS untuk layar kecil (mobile) */
+    @media (max-width: 768px) {
+        .img-footer {
+            max-width: 50%; /* Lebar lebih besar di layar kecil */
+            width: 50%; /* Sesuaikan dengan lebar layar kecil */
+            margin-left: 0; /* Hilangkan margin agar lebih rapi */
+        }
+    }
+        </style>
+
+        <footer class="text-center text-lg-start text-muted" style="background-color: #ece7e1; color: #000;">
+            <!-- Section: Top  -->
+            <section>
+                <div class="container-fluid">
+                    <div class="row">
+                        <img src="/landing_EPA/static/src/img/logo.png" class="img-fluid img-footer" alt="Logo Brand" />
+                    </div>
+                </div>
+
+            </section>
+            <section>
+                <div class="container-fluid py-5">
+                    <div class="row">
+
+                        <!-- Head Office -->
+                        <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.246048259811!2d-77.03272818465303!3d38.895681279570856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7d3b358eb45%3A0xf5155c9f1a18c54e!2sWashington%20DC!5e0!3m2!1sen!2sus!4v1615578477761!5m2!1sen!2sus" width="100%" height="20%" style="border:0;" allowfullscreen="" loading="lazy">
+                            </iframe> -->
+
+                            <h6 class="text-uppercase fw-bold mb-4" style="font-size: 24px; text-align: left;">
+                                HEAD OFFICE
+                            </h6>
+                            <p class="mb-0" style="text-align: left;">
+                                Lorem
+                            </p>
+                            <p class="mb-0" style="text-align: left;">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <p class="mb-0" style="text-align: left;">
+                                08123456789
+                            </p>
+                        </div>
+
+                        <!-- About -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4" style="font-size: 24px; text-align: left;">
+                                ABOUT
+                            </h6>
+                            <p class="mb-0" style="text-align: left;">
+                                <a href="#!" class="text-reset">Vision And Mission</a>
+                            </p>
+                            <p class="mb-0" style="text-align: left;">
+                                <a href="#!" class="text-reset">Core Values</a>
+                            </p>
+                            <p class="mb-0" style="text-align: left;">
+                                <a href="#!" class="text-reset">Safety Protocol</a>
+                            </p>
+                            <p class="mb-0" style="text-align: left;">
+                                <a href="#!" class="text-reset">Legalitas / Kualifikasi / Sertifikasi</a>
+                            </p>
+                        </div>
+
+                        <!-- Services -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4" style="font-size: 24px; text-align: left;">
+                                SERVICES
+                            </h6>
+                            <p class="mb-0" style="text-align: left;">
+                                <a href="#!" class="text-reset">Engineering</a>
+                            </p>
+                            <p class="mb-0" style="text-align: left;">
+                                <a href="#!" class="text-reset">Procurement</a>
+                            </p>
+                            <p class="mb-0" style="text-align: left;">
+                                <a href="#!" class="text-reset">Construction</a>
+                            </p>
+                        </div>
+
+                        <!-- Stay Connected -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4" style="font-size: 24px; text-align: left;">
+                                STAY CONNECTED
+                            </h6>
+                            <div class="d-flex justify-content-start">
+                                <a href="https://wa.me/1234567890" class="me-4 text-reset" target="_blank" style="font-size: 2rem;">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="mailto:example@example.com" class="text-reset" target="_blank" style="font-size: 2rem;">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Bottom  -->
+            <hr />
+            <section class="py-3">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Project -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 text-center">
+                            <h6 class="text-uppercase fw-bold mb-4" style="font-size: 24px; text-align: left;">
+                                PROJECT
+                            </h6>
+                            <p style="text-align: left;">
+                                <a href="#!" class="text-reset">Latest Project</a>
+                            </p>
+                            <p style="text-align: left;">
+                                <a href="#!" class="text-reset">Testimonies</a>
+                            </p>
+                        </div>
+
+                        <!-- News -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 text-center">
+                            <h6 class="text-uppercase fw-bold mb-4" style="font-size: 24px; text-align: left;">
+                                NEWS
+                            </h6>
+                            <p style="text-align: left;">
+                                <a href="#!" class="text-reset">Trending News</a>
+                            </p>
+                        </div>
+
+                        <!-- Construction -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 text-center">
+                            <h6 class="text-uppercase fw-bold mb-4" style="font-size: 24px; text-align: left;">
+                                CONSTRUCTION
+                            </h6>
+                            <p style="text-align: left;">
+                                <a href="#!" class="text-reset">Lorem</a>
+                            </p>
+                            <p style="text-align: left;">
+                                <a href="#!" class="text-reset">Lorem</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </template>
+</odoo>

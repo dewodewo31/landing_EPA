@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Template untuk Landing Page -->
+    <template id="landing_page_template" name="Landing Page">
+        <t t-call="website.layout">
+            <style>
+        body {
+    font-family: 'Open Sans', sans-serif;
+}
+            </style>
+            <div style="background-color: #ece7e1; display: flex; flex-direction: column; min-height: 100vh; font-family: 'Open Sans', sans-serif;">
+                <t t-call="landing_EPA.assets_css"/>
+
+                <!-- Navbar -->
+                <t t-call="landing_EPA.jumbotron"/>
+
+                <!-- Card Section -->
+                <!-- <t t-call="landing_EPA.card"/> -->
+
+                <!-- Our Certification Section -->
+                <t t-call="landing_EPA.certi"/>
+
+                <!-- About Us Section -->
+                <t t-call="landing_EPA.about"/>
+
+                <!-- Construction Section -->
+                <t t-call="landing_EPA.construction"/>
+
+                <!-- Testimonials Section -->
+                <t t-call="landing_EPA.testimoni"/>
+
+                <!-- Contact Section -->
+                <t t-call="landing_EPA.contact"/>
+
+                <!-- Footer -->
+                <t t-call="landing_EPA.footer"/>
+
+                <!-- JS -->
+                <t t-call="landing_EPA.assets_js"/>
+            </div>
+        </t>
+    </template>
+
+    <!-- Action untuk Landing Page -->
+    <record id="action_landing_page" model="ir.actions.act_url">
+        <field name="name">Landing Page</field>
+        <field name="url">/landing_page</field>
+        <field name="target">self</field>
+    </record>
+</odoo>

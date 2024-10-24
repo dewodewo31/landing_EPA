@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="construction" name="Construction Section">
+        <style>
+            .custom-col {
+                flex: 0 0 100%;  /* Default untuk mobile */
+                max-width: 100%;  /* Default untuk mobile */
+            }
+
+            @media (min-width: 576px) { /* Small screens (min-width 576px) */
+                .custom-col {
+                    flex: 0 0 50%;  /* Setengah layar untuk small screens */
+                    max-width: 50%;
+                }
+            }
+
+            @media (min-width: 992px) { /* Large screens (min-width 992px) */
+                .custom-col {
+                    flex: 0 0 20%;  /* Sepertiga layar untuk desktop */
+                    max-width: 20%;
+                }
+            }
+
+            /* Overlay untuk card */
+            .card-overlay {
+                position: absolute;
+                bottom: 0;
+                top: 0;
+                left: 0;
+                right: 0;
+                padding: 10px;
+                background-color: rgba(0, 0, 0, 0.4);
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+
+            /* Responsive styling untuk text CONSTRUCTION */
+            h1.construction-title {
+                text-align: justify;
+                color: #ed781b;
+                font-weight: bold;
+                font-family: 'Open Sans', sans-serif;
+                margin-left: 50px;
+            }
+
+            @media (max-width: 576px) {
+                h1.construction-title {
+                    font-size: 1.8rem; /* Ukuran font untuk layar kecil */
+                    margin-left: 10px;  /* Margin kecil untuk layar kecil */
+                }
+            }
+
+            @media (min-width: 577px) and (max-width: 991px) {
+                h1.construction-title {
+                    font-size: 2.5rem; /* Ukuran font untuk layar medium */
+                    margin-left: 30px;  /* Margin menengah */
+                }
+            }
+
+            @media (min-width: 992px) {
+                h1.construction-title {
+                    font-size: 3rem; /* Ukuran font besar untuk layar besar */
+                    margin-left: 50px;  /* Margin besar untuk desktop */
+                }
+            }
+
+        </style>
+
+        <div id="construction" class="container-fluid mt-2 mb-2" style="padding: 20px;">
+            <h1 class="construction-title">
+                CONSTRUCTION
+            </h1>
+
+            <!-- Kontainer untuk kartu dengan d-flex -->
+            <div class="d-flex flex-wrap justify-content-center mt-4" style="gap: 20px;">
+
+                <!-- Menggunakan perulangan untuk menampilkan kartu -->
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <t t-foreach="range(1, 6)" t-as="i">
+                            <div class="custom-col col-md-6 mb-3 p-1">                                <!-- Fluid layout pada mobile dan grid pada desktop -->
+                                <div class="card text-left w-100" style="height: 300px; border-radius: 0; overflow: hidden;">
+                                    <div class="position-relative" style="height: 100%;">
+                                        <span style="position: absolute; top: 10px; left: 10px; color: #dcd9d1; font-size: 2rem; font-weight: bold; text-decoration: underline; z-index: 10;">
+                                            <t t-esc="str(i).zfill(2)" />
+                                        </span>
+                                        <img t-att-src="'/landing_EPA/static/src/img/proc.jpg'" class="card-img-top" alt="Card" style="width: 100%; height: 100%; object-fit: cover;" />
+                                    </div>
+                                    <div class="card-overlay">
+                                        <div class="d-flex align-items-center justify-content-between" style="width: 100%;">
+                                            <h5 class="card-title" style="margin-bottom: 0; flex-grow: 1; font-weight: bold; color: #dcd9d1; text-align: left;">
+                                                LOREM <br />
+                                                IPSUM <t t-esc="i" />
+                                        </h5>
+                                        <a href="#">
+                                            <img t-att-src="'/landing_EPA/static/src/img/icon/big.png'" style="width: 3rem; height: auto; margin-left: 10px;" alt="arrow" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teks di bagian bawah -->
+        <p style="text-align: center; margin-top: 10px; font-family: 'Open Sans', sans-serif;">
+            <span style="color: black; font-size: 2rem; font-weight: bold;">LOOK OUT OUR </span>
+            <span style="color: #ed781b; font-size: 2rem; font-weight: bold;">SAFETY PROTOCOL</span>
+            <a href="/landing_page">
+                <img t-att-src="'/landing_EPA/static/src/img/icon/big.png'" style="width: 3rem; height: auto; margin-left: 5px; margin-bottom: 30px;" alt="Custom Arrow Icon" />
+            </a>
+        </p>
+
+    </div>
+</template>
+</odoo>

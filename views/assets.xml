@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- CSS untuk frontend -->
+    <template id="assets_css" name="Landing Page CSS">
+
+        <xpath expr="." position="inside">
+            <!-- Link CSS Lokal -->
+            <link rel="stylesheet" href="/landing_EPA/static/src/css/style.css"/>
+            <!-- Link Bootstrap CSS Lokal -->
+            <link rel="stylesheet" href="/landing_EPA/static/src/bootstrap/css/bootstrap.min.css"/>
+            <!-- Link Font Awesome CSS Lokal -->
+            <link rel="stylesheet" href="/landing_EPA/static/src/fa/css/all.min.css"/>
+            <!-- Mengimpor font Open Sans -->
+            <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300,400,600,700,800&amp;display=swap" rel="stylesheet"/>
+
+        </xpath>
+    </template>
+
+    <!-- JS untuk frontend -->
+    <template id="assets_js" name="Landing Page JS">
+        <xpath expr="." position="inside">
+            <!-- Link jQuery Lokal (pastikan kamu sudah men-download jQuery) -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <!-- Link Popper.js (dibutuhkan untuk Bootstrap) -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+            <!-- Link Bootstrap JS Lokal -->
+            <script type="text/javascript" src="/landing_EPA/static/src/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <!-- Link JS Lokal -->
+            <script type="text/javascript" src="/landing_EPA/static/src/js/script.js"></script>
+        </xpath>
+    </template>
+</odoo>

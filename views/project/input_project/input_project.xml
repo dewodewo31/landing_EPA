@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="input_body" name="Input Project Form">
+        <style>
+            @media (max-width: 768px) {
+                hr {
+                    border: 1px solid #ed781b; /* Mengubah warna border pada layar kecil */
+                    width: 90%; /* Lebar lebih kecil untuk perangkat kecil */
+                    margin: 5px auto; /* Margin lebih kecil di atas dan bawah */
+                }
+            }
+        </style>
+
+        <form method="post" action="/input_project" enctype="multipart/form-data">
+
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+            <div class="container text-center my-4 mb-3">
+                <hr style="border: 1px solid #000; width: 100%; margin: 0 auto;"/>
+                <span style="background: #ece7e1; padding: 0 10px; position: relative; top: -0.7em; z-index: 1; font-size: 20px; font-weight: bold;">
+                    INPUT PROJECT IN HERE
+                </span>
+            </div>
+
+            <!-- Name Section -->
+            <div class="row mt-4 justify-content-center mb-3">
+                <div class="col-md-4 col-12 mb-3">
+                    <label for="project_name" style="font-weight: bold;">PROJECT NAME</label>
+                    <input type="text" id="project_name" name="name" class="form-control" placeholder="Enter Your Project Name" style="background-color: #ece7e1; border-color: #ed781b; border-width: 2px; border-radius: 0;" required="required" />
+                </div>
+
+                <div class="col-md-4 col-12 mb-3">
+                    <label for="client_name" style="font-weight: bold;">CLIENT</label>
+                    <input type="text" id="client_name" name="company_name" class="form-control" placeholder="Enter Your Client Name" style="background-color: #ece7e1; border-color: #ed781b; border-width: 2px; border-radius: 0;" />
+                </div>
+            </div>
+
+            <div class="row mt-4 justify-content-center mb-3">
+                <div class="col-md-4 col-12 mb-3">
+                    <label for="project_location" style="font-weight: bold;">LOCATION</label>
+                    <input type="text" id="project_location" name="location" class="form-control" placeholder="Enter Project Location" style="background-color: #ece7e1; border-color: #ed781b; border-width: 2px; border-radius: 0;" required="required" />
+                </div>
+
+                <div class="col-md-4 col-12 mb-3">
+                    <label for="project_process" style="font-weight: bold;">PROCESS</label>
+                    <input type="text" id="project_process" name="process" class="form-control" placeholder="Enter The Process Of Project" style="background-color: #ece7e1; border-color: #ed781b; border-width: 2px; border-radius: 0;" required="required" />
+                </div>
+            </div>
+
+            <div class="row mt-4 justify-content-center mb-3">
+                <div class="col-md-4 col-12 mb-3">
+                    <label for="project_size" style="font-weight: bold;">PROJECT SIZE (in sq m)</label>
+                    <input type="text" id="project_size" name="project_size" class="form-control" placeholder="Enter Project Size" style="background-color: #ece7e1; border-color: #ed781b; border-width: 2px; border-radius: 0;" required="required" />
+                </div>
+
+                <div class="col-md-4 col-12 mb-3">
+                    <label for="project_years" style="font-weight: bold;">YEARS</label>
+                    <input type="text" id="project_years" name="years" class="form-control" placeholder="Enter Project Duration" style="background-color: #ece7e1; border-color: #ed781b; border-width: 2px; border-radius: 0;" required="required" />
+                </div>
+
+
+                <div class="col-12 mb-3">
+                    <label for="project_years" style="font-weight: bold; text-align: center; display: block; width: 100%;">DESCRIPTION</label>
+                    <textarea id="custom_description" name="custom_description" class="form-control" placeholder="Enter your project description" style="height: 250px; border-color: #ed781b; border-width: 2px; border-radius: 0; background-color: #ece7e1; width: 65%; margin: auto;" required="required"></textarea>
+                </div>
+
+
+            </div>
+            <div class="container my-4 mb-3">
+                <hr style="border: 1px solid #000; width: 100%; margin: 0 auto;"/>
+                <span style="background: #ece7e1; padding: 0 10px; position: relative; top: -0.7em; z-index: 1; font-size: 20px; font-weight: bold; left: -1em">
+                    ATTACH IMAGE
+                </span>
+            </div>
+
+            <div class="row mt-4 justify-content-center mb-2">
+                <div class="col-12 mb-3">
+                    <div id="drop-area" style="border: 2px dashed #ed781b; border-radius: 5px; background-color: #ece7e1; width: 80%; margin: auto; padding: 20px; text-align: center;">
+                        <p>Drag and Drop Your Image Here or Click To Select</p>
+                        <input id="attachment" type="file" name="attachment" accept="image/*" style="display: none;" />
+                        <button type="button" class="btn" style="background-color: #ed781b; color: white; margin-top: 10px;" onclick="document.getElementById('attachment').click();">Select Image</button>
+                    </div>
+                    <p id="file-upload-status" style="text-align: center; margin-top: 10px;"></p>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center my-4 mb-3 flex-wrap">
+                <button type="submit" name="action" value="send_message" class="btn" style="background-color: #ed781b; color: white; margin: 5px 10px; padding: 10px 0; width: 160px; white-space: normal; text-align: center; font-weight: bold; font-size: 18px; border-radius: 0;">
+                    SEND MESSAGE
+                </button>
+            </div>
+        </form>
+
+        <script>
+            let dropArea = document.getElementById('drop-area');
+            let fileUploadStatus = document.getElementById('file-upload-status');
+
+            // Prevent default drag behaviors
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, preventDefaults, false);
+                document.body.addEventListener(eventName, preventDefaults, false);
+            });
+
+            // Highlight the drop area when item is dragged over it
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dropArea.addEventListener(eventName, highlight, false);
+            });
+
+            // Reset the drop area when the dragged item leaves it
+            ['dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, unhighlight, false);
+            });
+
+            // Handle dropped files
+            dropArea.addEventListener('drop', handleDrop, false);
+            
+            dropArea.addEventListener('click', () => {
+                document.getElementById('attachment').click();
+            });
+
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            function highlight() {
+                dropArea.style.borderColor = '#d1a56b';
+            }
+
+            function unhighlight() {
+                dropArea.style.borderColor = '#ed781b';
+            }
+
+            function handleDrop(e) {
+                let dt = e.dataTransfer;
+                let files = dt.files;
+                handleFiles(files);
+            }
+
+            document.getElementById('attachment').addEventListener('change', (e) => {
+                let files = e.target.files;
+                handleFiles(files);
+            });
+
+            function handleFiles(files) {
+                if (files.length > 0) {
+                    const file = files[0];
+                    if (file.type.startsWith('image/')) {
+                        fileUploadStatus.textContent = `Uploaded: ${file.name}`;
+                    } else {
+                        fileUploadStatus.textContent = 'Please upload a valid image file.';
+                    }
+                }
+            }
+        </script>
+    </template>
+</odoo>
